@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
+using API.Entities.Identity;
+using API.Extension;
+using API.Infrastructure.Identity;
 using API.Repository;
+using API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -62,9 +67,22 @@ namespace API
             });*/
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped<IProduct, ProductRepository>();
+            services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IOrderService, OrderService>();
            // services.AddScoped<I, ProductRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddDbContext<AppIdentityDbContext>(opt =>
+            {
+                opt.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
+            });
+            services.AddIdentityCore<AppUser>(opt => { })
+           .AddEntityFrameworkStores<AppIdentityDbContext>()
+           .AddSignInManager<SignInManager<AppUser>>();
+
+            services.AddAuthentication();
+            services.AddAuthorization();
+            services.AddSweggerDocumentation();
 
         }
 
@@ -84,7 +102,11 @@ namespace API
 
             app.UseStaticFiles();
 
+            app.UseSweggerDocumentation();
+
             app.UseCors("angularApplication");
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

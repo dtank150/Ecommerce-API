@@ -1,4 +1,5 @@
 ﻿using API.Entities;
+using API.Entities.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace API.Data
 {
     public class StoreContext : DbContext
     {
-        public StoreContext(DbContextOptions options) : base(options)
+        public StoreContext(DbContextOptions<StoreContext> options) : base(options)
         {
         }
 
@@ -19,6 +20,9 @@ namespace API.Data
         public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<BasketItem> BasketItems { get; set; }
         public DbSet<CustomerBasket> CustomerBasket { get; set; }
+        public DbSet<Orders> Orders { get; set; }
+        public DbSet<OrderItem> orderItems { get; set; }
+        public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -48,31 +52,31 @@ namespace API.Data
                {
                    Id = 3,
                    Name = "Core Board Speed Rush 3",
-                    Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-                    Price = 180,
-                    PictureUrl = "images/products/sb-core1.png",
+                   Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+                   Price = 180,
+                   PictureUrl = "images/products/sb-core1.png",
+                   ProductTypeId = 1,
+                   ProductBrandId = 2
+               },
+                new Product()
+                {
+                    Id = 4,
+                    Name = "Net Core Super Board",
+                    Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Proin pharetra nonummy pede. Mauris et orci.",
+                    Price = 300,
+                    PictureUrl = "images/products/sb-core2.png",
                     ProductTypeId = 1,
                     ProductBrandId = 2
                 },
                 new Product()
                 {
-                    Id = 4,
-                    Name = "Net Core Super Board",
-                   Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Proin pharetra nonummy pede. Mauris et orci.",
-                   Price = 300,
-                   PictureUrl = "images/products/sb-core2.png",
-                   ProductTypeId = 1,
-                   ProductBrandId = 2
-                },
-                new Product()
-                {
                     Id = 5,
                     Name = "React Board Super Whizzy Fast",
-                     Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                     Price = 250,
-                     PictureUrl = "images/products/sb-react1.png",
-                     ProductTypeId = 1,
-                     ProductBrandId = 4
+                    Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                    Price = 250,
+                    PictureUrl = "images/products/sb-react1.png",
+                    ProductTypeId = 1,
+                    ProductBrandId = 4
                 },
                 new Product()
                 {
@@ -266,24 +270,27 @@ namespace API.Data
                     ProductId = 17
 
                 });
+            
+            
 
 
-            /*   modelBuilder.Entity<CustomerBasket>(entity =>
-               {
-                   entity.HasKey(e => e.Id);
 
-                   entity.ToTable("CustomerBaskets");
+        /*   modelBuilder.Entity<CustomerBasket>(entity =>
+           {
+               entity.HasKey(e => e.Id);
 
-                   entity.Property(e => e.Id).HasMaxLength(255).IsRequired();
+               entity.ToTable("CustomerBaskets");
 
-                   entity.HasMany(e => e.Items)
-                       .WithOne()
-                       .HasForeignKey(e => e.Id)
-                       .IsRequired()
-                       .OnDelete(DeleteBehavior.Cascade);
-               });*/
+               entity.Property(e => e.Id).HasMaxLength(255).IsRequired();
 
-            modelBuilder.Entity<BasketItem>().HasData(
+               entity.HasMany(e => e.Items)
+                   .WithOne()
+                   .HasForeignKey(e => e.Id)
+                   .IsRequired()
+                   .OnDelete(DeleteBehavior.Cascade);
+           });*/
+
+        modelBuilder.Entity<BasketItem>().HasData(
               new BasketItem()
               {
                   Id = 1,

@@ -28,6 +28,11 @@ namespace API.Data
             return await _context.Set<T>().FindAsync(id);
         }
 
+        public Task GetByIdAsync(object id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<T> GetEntityWithSpec(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).FirstOrDefaultAsync();   

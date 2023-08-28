@@ -15,6 +15,7 @@ namespace API.Entities
         {
         }
         public int ProductId { get; set; }
+        public ICollection<BasketItem> Items { get; set; }
         //public List<Product> Products { get; set; }
     }
 }

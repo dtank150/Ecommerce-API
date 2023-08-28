@@ -76,9 +76,6 @@ C:\Ecommerce\API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Ecommerce\API\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\Ecommerce\C#\API\bin\Debug\net5.0\appsettings.Development.json
 C:\Ecommerce\C#\API\bin\Debug\net5.0\appsettings.json
-C:\Ecommerce\C#\API\bin\Debug\net5.0\Data\SeedData\brands.json
-C:\Ecommerce\C#\API\bin\Debug\net5.0\Data\SeedData\products.json
-C:\Ecommerce\C#\API\bin\Debug\net5.0\Data\SeedData\types.json
 C:\Ecommerce\C#\API\bin\Debug\net5.0\API.exe
 C:\Ecommerce\C#\API\bin\Debug\net5.0\API.deps.json
 C:\Ecommerce\C#\API\bin\Debug\net5.0\API.runtimeconfig.json
@@ -111,7 +108,6 @@ C:\Ecommerce\C#\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Ecommerce\C#\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Ecommerce\C#\API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Ecommerce\C#\API\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Ecommerce\C#\API\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Ecommerce\C#\API\bin\Debug\net5.0\SQLitePCLRaw.core.dll
 C:\Ecommerce\C#\API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Ecommerce\C#\API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -153,3 +149,14 @@ C:\Ecommerce\C#\API\bin\Debug\net5.0\Pipelines.Sockets.Unofficial.dll
 C:\Ecommerce\C#\API\bin\Debug\net5.0\StackExchange.Redis.dll
 C:\Ecommerce\C#\API\bin\Debug\net5.0\System.IO.Pipelines.dll
 C:\Ecommerce\C#\API\obj\Debug\net5.0\API.csproj.AssemblyReference.cache
+C:\Ecommerce\C#\API\bin\Debug\net5.0\Infrastructure\Data\SeedData\brands.json
+C:\Ecommerce\C#\API\bin\Debug\net5.0\Infrastructure\Data\SeedData\products.json
+C:\Ecommerce\C#\API\bin\Debug\net5.0\Infrastructure\Data\SeedData\types.json
+C:\Ecommerce\C#\API\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Ecommerce\C#\API\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Ecommerce\C#\API\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Ecommerce\C#\API\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Ecommerce\C#\API\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Ecommerce\C#\API\bin\Debug\net5.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Ecommerce\C#\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Ecommerce\C#\API\bin\Debug\net5.0\Infrastructure\Data\SeedData\delivery.json

@@ -7,7 +7,7 @@ namespace API.Entities
 {
     public class Product : BaseEntity
     {
-     //  public int Id { get; set; }
+      // public int Id { get; set; }
        public string Name { get; set; }
        public string Description { get; set; }
        public decimal Price { get; set; }
@@ -17,7 +17,7 @@ namespace API.Entities
        public ProductBrand ProductBrand { get; set; }
        public int ProductBrandId { get; set; }
 
-      // public List<CustomerBasket> CustomerBaskets { get; set; } = new List<CustomerBasket>();
+       public List<CustomerBasket> CustomerBaskets { get; set; } = new List<CustomerBasket>();
 
 
     }

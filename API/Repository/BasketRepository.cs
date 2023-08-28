@@ -34,6 +34,16 @@ namespace API.Repository
             return await _dbContext.Set<CustomerBasket>().FindAsync(basketId);
         }
 
+        public Task<CustomerBasket> GetBasketAsync(string basketID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task GetBasketAsync(object basketId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket basket)
         {
             var existingBasket = await GetBasketAsync(basket.Id);
@@ -50,6 +60,8 @@ namespace API.Repository
             await _dbContext.SaveChangesAsync();
             return await GetBasketAsync(basket.Id);
         }
+
+       
     }
 }
 
